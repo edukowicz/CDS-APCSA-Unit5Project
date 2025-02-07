@@ -2,16 +2,16 @@ import java.util.ArrayList;
 
 // instance variables are the city name and the PM value for that city
 
-class City {
+class CityTwo {
     String name;
     int pmValue;
 
-    public City() {
+    public CityTwo() {
         name = "no name";
         pmValue = 0;
     }
 
-    public City(String nm, int pm) {
+    public CityTwo(String nm, int pm) {
         name = nm;
         pmValue = pm;
     }
@@ -24,7 +24,7 @@ class City {
         return pmValue;
     }
 
-    public static ArrayList<City> loadValues() {
+    public static ArrayList<CityTwo> loadValues() {
          // set up parallel arrays with the city names and pollution data
           // initialize each array with the information from the Student Data Set A, B, C, or D
       String[] cities = {"Miami", "New Orleans", "San Francisco", "Atlanta"};
@@ -32,11 +32,11 @@ class City {
       int[] pmValues = {48,46,25,46,};
 
       //create an array of City objects
-      ArrayList<City> theC = new ArrayList<City>();
+      ArrayList<CityTwo> theC = new ArrayList<CityTwo>();
 
       for (int i = 0; i < 4; i++)
       {
-        theC.add(new City(cities[i], pmValues[i]));
+        theC.add(new CityTwo(cities[i], pmValues[i]));
       }
       
       return theC;

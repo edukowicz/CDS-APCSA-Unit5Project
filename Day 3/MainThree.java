@@ -54,9 +54,9 @@ class MainThree {
 	// The method uses paramaters c which is the array of cities and d which is the 2D array of 24-hour PM2.5 levels.
 	public static void printData(String[] c, double[][] d) {
     for(int r = 0; r < d.length; r++) {
-      System.out.print("| " + c[r] + " | ");
+      System.out.print(c[r] + ", ");
       for(int col = 0; col < d[r].length; col++) {
-        System.out.print(d[r][col] + " | ");
+        System.out.print(d[r][col] + ", ");
       }
       System.out.println();
     }

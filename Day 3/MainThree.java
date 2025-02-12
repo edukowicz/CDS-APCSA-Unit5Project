@@ -1,7 +1,4 @@
 //Air Quality Analyzer 3               A+CR
-import java.util.ArrayList;
-
-//Use your assigned data set A,B,C, or D
 
 class MainThree {
 
@@ -37,15 +34,22 @@ class MainThree {
 
 
   //create a 1D data structure (array or ArrayList) and add the average PM2.5 level for a day for each city by calling the average method and passing a 1D array that represents each row in the 2D array
-    double[] avg = {average(columbo), average(manali), average(secretariat), average(solapur), average(katraj), average(midcKjutala)};
+    double[] avg = new double[6];
+    avg[0] = average(columbo);
+    avg[1] = average(manali);
+    avg[2] = average(secretariat);
+    avg [3] = average(solapur);
+    avg [4] = average(katraj);
+    avg [5] = average(midcKjutala);
 
  
     //print a summary of the cities and their average PM2.5 levels rounded to the nearest one hundredth place
     for(int i = 0; i < avg.length; i++) {
       double newAvg = avg[i] * 100;
-      newAvg = newAvg - (newAvg% 1);
+      newAvg = newAvg + 0.5;
+      newAvg = newAvg - (newAvg % 1);
       newAvg = newAvg/100;
-      System.out.println("In the city of " + cities[i] + " the average PM2.5 level for the day is " + newAvg);
+      System.out.println("In the city of " + cities[i] + " the average PM2.5 level for the day is " + newAvg + ".");
     }
     
   }//end of main method
@@ -67,10 +71,16 @@ class MainThree {
  
  public static double average(double[] values) {
   double sum = 0;
+  int count = 0;
   for(int i = 0; i < values.length; i++) {
-    sum = sum + values[i];
+    if(!(values[i] == 0)) {
+      sum = sum + values[i];
+    }
+    else {
+      count = count + 1;
+    }
   }
-  sum = sum/values.length;
+  sum = sum/(values.length-count);
   return sum;
  }
 
